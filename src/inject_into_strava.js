@@ -4,6 +4,9 @@ const STEVIE_STYLE = 'Stevie style';
 const ON_PAR = 'On par';
 const HTFU = 'HTFU';
 
+const get_language = () =>
+    document.querySelector('html[lang]')?.getAttribute('lang');
+
 const calculate_skc = (moving_time, elapsed_time) => 
     Math.round(((elapsed_time - moving_time) / moving_time) * 1000) / 10;
 
@@ -50,10 +53,11 @@ const inject = (skc, { grade, text }) => {
             color = '#b40312';
         }
         
+        const localized_skc = Intl.NumberFormat(get_language()).format(skc);
         activity_stats.innerHTML += `<div class="section skc">
             <div class="skc-stats row">
                 <div class="skc-number spans8">
-                    <div style="font-size: 28px; color: ${color};" title="${grade}">${skc}</div>
+                    <div style="font-size: 28px; color: ${color};" title="${grade}">${localized_skc}</div>
                     <div>Steven Kruijswijk Coefficient</div>
                 </div>
                 <div class="skc-grade spans8">${text}</div>
