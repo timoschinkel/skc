@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "author": "Timo Schinkel",
+    "version": "0.1",
+    "name": "Steven Kruijswijk Coefficient",
+    "description": "Calculates your Steven Kruijswijk Coefficient for Strava rides",
+    "content_scripts": [
+        {
+            "matches": ["https://www.strava.com/activities/*"],
+            "js": ["src/inject_into_strava.js"]
+        }
+    ]
+}
