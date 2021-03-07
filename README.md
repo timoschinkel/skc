@@ -6,13 +6,12 @@ Until I figure out how to get the extension into the Chrome and Firefox extensio
 
 For Firefox:
 - Clone this repository
-- Open the add-ons panel via "Extra" > "Add-Ons"
-- Via the cog enable "Debug Add-ons"
+- Navigate to [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
 - Chose "Load temporary add-on" and select the `manifest.json` file
 
 For Chrome:
 - Clone this repository
-- Open the add-ons panel via "Window" > "Extensions"
+- Navigate to [chrome://extensions/](chrome://extensions/)
 - Enable "Developer mode" on the top right
 - Select "Load unpacked" and select the folder where the extension is cloned
 

@@ -3,7 +3,7 @@
     "author": "Timo Schinkel",
     "version": "0.1",
     "name": "Steven Kruijswijk Coefficient",
-    "description": "Calculates your Steven Kruijswijk Coefficient for Strava rides",
+    "description": "Calculates your Steven Kruijswijk Coefficient for Strava rides. Source: https://github.com/timoschinkel/skc",
     "content_scripts": [
         {
             "matches": ["https://www.strava.com/activities/*"],
