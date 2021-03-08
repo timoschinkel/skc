@@ -35,7 +35,7 @@ const calculate_skc = (moving_time, elapsed_time) =>
     Math.round(((elapsed_time - moving_time) / moving_time) * 1000) / 10;
 
 const moving_time_per_hour = (hours) =>
-    3600 * (hours - 1);
+    3600 * hours;
 
 const grade_skc = (moving_time, skc) => {
     // Source for this mapping the Bicycling magazine. Translations are my own.
