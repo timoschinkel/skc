@@ -31,13 +31,22 @@ const translations = {
 const __ = (translation_string) =>
     translations?.[language]?.[translation_string] || translation_string;
 
-const calculate_skc = (moving_time, elapsed_time) => 
-    Math.round(((elapsed_time - moving_time) / moving_time) * 1000) / 10;
-
 const moving_time_per_hour = (hours) =>
     3600 * hours;
 
-const grade_skc = (moving_time, skc) => {
+/**
+ * @typedef {Object} SKC
+ * @property {Number} skc - The calculated Steven Kruijswijk Coefficient
+ * @property {String} grade - Stevie Style, on par or HTFU
+ * @property {String} text - Textual comment on your skc score
+ */
+
+/**
+ * @param {Number} moving_time
+ * @param {Number} elapsed_time
+ * @param {SKC}
+ */
+const calculate_skc = (moving_time, elapsed_time) => {
     // Source for this mapping the Bicycling magazine. Translations are my own.
     // https://tools.bicycling.nl/steven-kruijswijk-coefficient
     const mapping = [
@@ -53,19 +62,22 @@ const grade_skc = (moving_time, skc) => {
         { moving_time_floor: moving_time_per_hour(10), stevie_style_ceiling: 10, on_par_ceiling: 13, text: __('Sick fuck. (Take your time.)') },
     ];
 
+    const skc = Math.round(((elapsed_time - moving_time) / moving_time) * 1000) / 10;
+
     const eligible = mapping.filter(({ moving_time_floor }) => moving_time_floor <= moving_time);
     const rank = eligible[eligible.length - 1];
 
     if (skc <= rank.stevie_style_ceiling) {
-        return { grade: STEVIE_STYLE, text: rank.text };
+        return { skc, grade: STEVIE_STYLE, text: rank.text };
     } else if (skc <= rank.on_par_ceiling) {
-        return { grade: ON_PAR, text: rank.text };
+        return { skc, grade: ON_PAR, text: rank.text };
     }
 
-    return { grade: HTFU, text: rank.text };
+    return { skc, grade: HTFU, text: rank.text };
+
 }
 
-const inject = (skc, { grade, text }) => {
+const inject = ({skc, grade, text }) => {
     const activity_stats = document.querySelector('.activity-stats');
     if (activity_stats) {
 
@@ -123,9 +135,7 @@ const moving_time = get_moving_time();
 const elapsed_time = get_elapsed_time();
 
 if (moving_time && elapsed_time) {
-    const delta = elapsed_time - moving_time;
     const skc = calculate_skc(moving_time, elapsed_time);
-    const grade = grade_skc(moving_time, skc);
 
-    inject(skc, grade);
+    inject(skc);
 }
