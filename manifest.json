@@ -2,8 +2,7 @@
     "manifest_version": 2,
     "author": "Timo Schinkel",
     "version": "0.1",
-    "name": "Steven Kruijswijk Coefficient",    
-    "short_name": "SKC",
+    "name": "SKC",    
     "description": "Calculates your Steven Kruijswijk Coefficient for Strava rides.",
     "homepage_url": "https://github.com/timoschinkel/skc",
     "content_scripts": [
