@@ -10,6 +10,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production',
+  optimization: {
+    minimize: false
+  },
   plugins: [
     new CopyWebpackPlugin({
         patterns: [
