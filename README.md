@@ -2,7 +2,12 @@
 The [Steven Kruijswijk Coefficient](https://www.bicycling.com/nl/stijl/a26851320/de-steven-kruijswijk-coefficient/) is a number that represents the ratio of ridden time compared to the elapsed time. It was first mentioned by Lauren ten Dam during his podcast series [Live Slow, Ride Fast](https://www.liveslowridefast.com/).
 
 ## Installation
-Until I figure out how to get the extension into the Chrome and Firefox extension directories you will have to load the extension manually in your browser.
+The extension is available in the add-on store for Firefox: https://addons.mozilla.org/en-US/firefox/addon/skc/
+
+For Chrome the extension is not yet available in the Chrome Store.
+
+### Manually installation
+It is possible to install the extension from source and load them as temporary extension in both Firefox and Chrome.
 
 For Firefox:
 - Clone this repository
