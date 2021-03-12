@@ -1,0 +1,30 @@
+{
+  "name": "skc",
+  "version": "0.1.0",
+  "description": "Calculates your \"Steven Kruijswijk Coefficient\" for Strava rides and shows it on your Strava ride page.",
+  "dependencies": {
+    "copy-webpack-plugin": "^8.0.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timoschinkel/skc.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "package": "cd dist && zip -r ../dist.zip * && cd ..",
+    "verify-package": "unzip -vl dist.zip"
+  },
+  "keywords": [
+    "Strava",
+    "SKC"
+  ],
+  "author": "Timo Schinkel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timoschinkel/skc/issues"
+  },
+  "homepage": "https://github.com/timoschinkel/skc#readme"
+}
