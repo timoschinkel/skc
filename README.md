@@ -4,7 +4,7 @@ The [Steven Kruijswijk Coefficient](https://www.bicycling.com/nl/stijl/a26851320
 ## Installation
 The extension is available in the add-on store for Firefox: https://addons.mozilla.org/en-US/firefox/addon/skc/
 
-For Chrome the extension is not yet available in the Chrome Store.
+For Chrome the extension is available in the Chrome Web Store: https://chrome.google.com/webstore/detail/skc/hjpipkimbplbanbenalijipeadebekog
 
 ### Manual installation
 With every release a zip file with the necessary files is added to the release. The releases are listed in the [Releases](https://github.com/timoschinkel/skc/releases) section of Github. The file should be called `skc-[version].zip`
