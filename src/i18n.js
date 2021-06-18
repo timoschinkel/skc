@@ -19,5 +19,6 @@ const translations = {
  * @param {String} translation_string 
  * @returns {String}
  */
-export const __ = (translation_string) =>
-    translations?.[language]?.[translation_string] || translation_string;
+module.exports.__ = (language) => 
+    (translation_string) =>
+        translations?.[language]?.[translation_string] || translation_string;

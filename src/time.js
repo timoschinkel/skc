@@ -1,4 +1,8 @@
-export const duration_to_seconds = (time) => {
+/**
+ * @param {String} time 
+ * @returns {Number}
+ */
+module.exports.duration_to_seconds = (time) => {
     const parts = time.split(':').reverse();
     
     return parseInt(parts[0])

@@ -1,14 +1,14 @@
-export const STEVIE_STYLE = 'Stevie style';
-export const ON_PAR = 'On par';
-export const HTFU = 'HTFU';
+module.exports.STEVIE_STYLE = 'Stevie style';
+module.exports.ON_PAR = 'On par';
+module.exports.HTFU = 'HTFU';
 
 /**
- * @param {Number} moving_time 
- * @param {Number} elapsed_time 
+ * @param {Number} moving_time_seconds 
+ * @param {Number} elapsed_time_seconds 
  * @returns {Number}
  */
-export const calculate_skc = (moving_time, elapsed_time) => 
-    Math.round(((elapsed_time - moving_time) / moving_time) * 1000) / 10;
+module.exports.calculate_skc = (moving_time_seconds, elapsed_time_seconds) => 
+    Math.round(((elapsed_time_seconds - moving_time_seconds) / moving_time_seconds) * 1000) / 10;
 
 const moving_time_per_hour = (hours) =>
     3600 * hours;
@@ -18,7 +18,7 @@ const moving_time_per_hour = (hours) =>
  * @param {Number} skc
  * @returns {Object}
  */
-export const grade_skc = (moving_time, skc) => {
+ module.exports.grade_skc = (moving_time, skc) => {
     // Source for this mapping the Bicycling magazine. Translations are my own.
     // https://tools.bicycling.nl/steven-kruijswijk-coefficient
     const mapping = [

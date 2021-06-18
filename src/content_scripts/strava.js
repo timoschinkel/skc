@@ -1,11 +1,12 @@
 'use strict';
 
 import { STEVIE_STYLE, ON_PAR, HTFU, calculate_skc, grade_skc } from './../skc';
-import { __ } from './../i18n';
+import { __ as translator } from './../i18n';
 import { duration_to_seconds } from './../time';
 
 /** @type {String|undefined} */
 const language = document.querySelector('html[lang]')?.getAttribute('lang');
+const __ = translator(language);
 
 const inject = (skc, { grade, text }) => {
     const activity_stats = document.querySelector('.activity-stats');
