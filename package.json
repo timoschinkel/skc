@@ -2,11 +2,9 @@
   "name": "skc",
   "version": "0.1.0",
   "description": "Calculates your \"Steven Kruijswijk Coefficient\" for Strava rides and shows it on your Strava ride page.",
-  "dependencies": {
-    "webpack": "^5.76.0"
-  },
   "devDependencies": {
     "copy-webpack-plugin": "^14.0.0",
+    "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2"
   },
   "repository": {
